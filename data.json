@@ -1,0 +1,700 @@
+{
+    "headers":
+    [
+        {
+            "name": "bOCrZguqyBl",
+            "column": "Pay Type",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "pe",
+            "column": "Period",
+            "valueType": "TEXT",
+            "type": "java.lang.String",
+            "hidden": false,
+            "meta": true
+        },
+        {
+            "name": "value",
+            "column": "Value",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "numerator",
+            "column": "Numerator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "denominator",
+            "column": "Denominator",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "factor",
+            "column": "Factor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "multiplier",
+            "column": "Multiplier",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        },
+        {
+            "name": "divisor",
+            "column": "Divisor",
+            "valueType": "NUMBER",
+            "type": "java.lang.Double",
+            "hidden": false,
+            "meta": false
+        }
+    ],
+    "metaData":
+    {
+        "items":
+        {
+            "sKNThlMLmO4":
+            {
+                "uid": "sKNThlMLmO4",
+                "name": "Tanzania",
+                "dimensionItemType": "ORGANISATION_UNIT",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "bOCrZguqyBl":
+            {
+                "uid": "bOCrZguqyBl",
+                "name": "Pay Type",
+                "dimensionType": "CATEGORY"
+            },
+            "dQxo7a1fQNL":
+            {
+                "uid": "dQxo7a1fQNL",
+                "name": "ENR - Premium Collected",
+                "dimensionItemType": "DATA_ELEMENT",
+                "valueType": "NUMBER",
+                "aggregationType": "SUM",
+                "totalAggregationType": "SUM"
+            },
+            "ou":
+            {
+                "uid": "ou",
+                "name": "Organisation unit",
+                "dimensionType": "ORGANISATION_UNIT"
+            },
+            "dbG74khunor":
+            {
+                "uid": "dbG74khunor",
+                "code": "C",
+                "name": "Cash",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "202008":
+            {
+                "uid": "202008",
+                "code": "202008",
+                "name": "August 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-08-01T00:00:00.000",
+                "endDate": "2020-08-31T00:00:00.000"
+            },
+            "202009":
+            {
+                "uid": "202009",
+                "code": "202009",
+                "name": "September 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-09-01T00:00:00.000",
+                "endDate": "2020-09-30T00:00:00.000"
+            },
+            "MSvjFs8t8Ab":
+            {
+                "uid": "MSvjFs8t8Ab",
+                "code": "B",
+                "name": "Bank",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "202006":
+            {
+                "uid": "202006",
+                "code": "202006",
+                "name": "June 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-06-01T00:00:00.000",
+                "endDate": "2020-06-30T00:00:00.000"
+            },
+            "202007":
+            {
+                "uid": "202007",
+                "code": "202007",
+                "name": "July 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-07-01T00:00:00.000",
+                "endDate": "2020-07-31T00:00:00.000"
+            },
+            "202004":
+            {
+                "uid": "202004",
+                "code": "202004",
+                "name": "April 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-04-01T00:00:00.000",
+                "endDate": "2020-04-30T00:00:00.000"
+            },
+            "y0wlxDf8qDR":
+            {
+                "uid": "y0wlxDf8qDR",
+                "name": "Cash",
+                "dimensionItemType": "CATEGORY_OPTION",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "yP3GrmbXDRC":
+            {
+                "uid": "yP3GrmbXDRC",
+                "name": "Mobile",
+                "dimensionItemType": "CATEGORY_OPTION",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "202005":
+            {
+                "uid": "202005",
+                "code": "202005",
+                "name": "May 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-05-01T00:00:00.000",
+                "endDate": "2020-05-31T00:00:00.000"
+            },
+            "202002":
+            {
+                "uid": "202002",
+                "code": "202002",
+                "name": "February 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-02-01T00:00:00.000",
+                "endDate": "2020-02-29T00:00:00.000"
+            },
+            "202003":
+            {
+                "uid": "202003",
+                "code": "202003",
+                "name": "March 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-03-01T00:00:00.000",
+                "endDate": "2020-03-31T00:00:00.000"
+            },
+            "202011":
+            {
+                "uid": "202011",
+                "code": "202011",
+                "name": "November 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-11-01T00:00:00.000",
+                "endDate": "2020-11-30T00:00:00.000"
+            },
+            "202001":
+            {
+                "uid": "202001",
+                "code": "202001",
+                "name": "January 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-01-01T00:00:00.000",
+                "endDate": "2020-01-31T00:00:00.000"
+            },
+            "202012":
+            {
+                "uid": "202012",
+                "code": "202012",
+                "name": "December 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-12-01T00:00:00.000",
+                "endDate": "2020-12-31T00:00:00.000"
+            },
+            "dx":
+            {
+                "uid": "dx",
+                "name": "Data",
+                "dimensionType": "DATA_X"
+            },
+            "202010":
+            {
+                "uid": "202010",
+                "code": "202010",
+                "name": "October 2020",
+                "dimensionItemType": "PERIOD",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM",
+                "startDate": "2020-10-01T00:00:00.000",
+                "endDate": "2020-10-31T00:00:00.000"
+            },
+            "pe":
+            {
+                "uid": "pe",
+                "name": "Period",
+                "dimensionType": "PERIOD"
+            },
+            "TAwP3CKsOZE":
+            {
+                "uid": "TAwP3CKsOZE",
+                "code": "M",
+                "name": "Mobile",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            },
+            "trJaHzeHYnM":
+            {
+                "uid": "trJaHzeHYnM",
+                "name": "Bank",
+                "dimensionItemType": "CATEGORY_OPTION",
+                "valueType": "NUMBER",
+                "totalAggregationType": "SUM"
+            }
+        },
+        "dimensions":
+        {
+            "bOCrZguqyBl":
+            [
+                "trJaHzeHYnM",
+                "y0wlxDf8qDR",
+                "yP3GrmbXDRC"
+            ],
+            "dx":
+            [
+                "dQxo7a1fQNL"
+            ],
+            "pe":
+            [
+                "202001",
+                "202002",
+                "202003",
+                "202004",
+                "202005",
+                "202006",
+                "202007",
+                "202008",
+                "202009",
+                "202010",
+                "202011",
+                "202012"
+            ],
+            "ou":
+            [
+                "sKNThlMLmO4"
+            ],
+            "co":
+            [
+                "dbG74khunor",
+                "TAwP3CKsOZE",
+                "MSvjFs8t8Ab"
+            ]
+        }
+    },
+    "rows":
+    [
+        [
+            "Bank",
+            "January 2020",
+            "41530000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "February 2020",
+            "26200000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "March 2020",
+            "28240000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "April 2020",
+            "15230000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "December 2020",
+            "402476000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "November 2020",
+            "602660000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "October 2020",
+            "819090204.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "October 2020",
+            "42241960.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "November 2020",
+            "29396414.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "December 2020",
+            "22089112.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "October 2020",
+            "235309674.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "September 2020",
+            "736336846.2",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "November 2020",
+            "270296000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "August 2020",
+            "575951963.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "December 2020",
+            "134510000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "July 2020",
+            "485334001.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "June 2020",
+            "370404637.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "May 2020",
+            "359010632.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "April 2020",
+            "406348003.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "March 2020",
+            "682143908.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "February 2020",
+            "605060981.3",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Cash",
+            "January 2020",
+            "715053580.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "February 2020",
+            "24304784.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "March 2020",
+            "31833806.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "January 2020",
+            "28034132.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "June 2020",
+            "27397132.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "July 2020",
+            "27003806.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "April 2020",
+            "26895762.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "May 2020",
+            "24805110.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "May 2020",
+            "37471000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "June 2020",
+            "115160006.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "July 2020",
+            "60816000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "August 2020",
+            "23306740.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "August 2020",
+            "82586000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Mobile",
+            "September 2020",
+            "29126414.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        [
+            "Bank",
+            "September 2020",
+            "167440000.0",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    ],
+    "height": 36,
+    "width": 8,
+    "headerWidth": 8
+}
