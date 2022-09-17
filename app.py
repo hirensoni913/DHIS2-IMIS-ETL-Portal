@@ -1,15 +1,21 @@
 import os
-import json
+from datetime import datetime
 from operator import attrgetter
 from dataclasses import dataclass
+
 from flask import Flask
 from flask import render_template
 from markupsafe import escape
+from apscheduler.schedulers.background import BackgroundScheduler
 
 from utils import load_json
+from fetch import run as fetch_dhis2_data
 
 app = Flask(__name__)
 
+scheduler = BackgroundScheduler(daemon=True)
+scheduler.add_job(fetch_dhis2_data, 'interval', minutes=1, next_run_time=datetime.now())
+scheduler.start()
 
 @dataclass
 class Row:
@@ -63,4 +69,5 @@ def main():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='0.0.0.0', port=80, passthrough_errors=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port, passthrough_errors=True)
