@@ -1,7 +1,5 @@
 import json
 
-import os
-
 
 def load_json(filepath='data.json') -> dict:
     """Load json file from disk"""

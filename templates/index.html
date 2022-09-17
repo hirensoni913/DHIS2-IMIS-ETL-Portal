@@ -1,9 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Premium collected {% endblock %}
 {% block content %}
-        <div id = "container"></div>
+        <h1 class="title">
+            Premium collected
+        </h1>
+        <p class="subtitle">
+            Updated hourly
+        </p>
+        <div id="chart-container"></div>
         <script language="JavaScript">
-            Highcharts.chart('container', {
+            Highcharts.chart('chart-container', {
             chart: {
                 type: 'column'
             },
@@ -14,20 +19,7 @@
                 text: 'Source: IMIS'
             },
             xAxis: {
-                categories: [
-                    'Jan',
-                    'Feb',
-                    'Mar',
-                    'Apr',
-                    'May',
-                    'Jun',
-                    'Jul',
-                    'Aug',
-                    'Sep',
-                    'Oct',
-                    'Nov',
-                    'Dec'
-                ],
+                categories: {{ periods | safe }},
                 crosshair: true
             },
             yAxis: {
@@ -52,13 +44,13 @@
             },
             series: [{
                 name: 'Bank',
-                data: {{ bank_data|safe }}
+                data: {{ premium_collected.bank | safe }}
             }, {
                 name: 'Cash',
-                data: {{ cash_data }}
+                data: {{ premium_collected.cash | safe }}
             }, {
                 name: 'Mobile',
-                data: {{ mobile_data }}
+                data: {{ premium_collected.mobile | safe }}
             }]
         });
 
