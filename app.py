@@ -14,7 +14,7 @@ from fetch import run as fetch_dhis2_data
 app = Flask(__name__)
 
 scheduler = BackgroundScheduler(daemon=True)
-scheduler.add_job(fetch_dhis2_data, 'interval', minutes=1, next_run_time=datetime.now())
+scheduler.add_job(fetch_dhis2_data, 'interval', minutes=5, next_run_time=datetime.now())
 scheduler.start()
 
 @dataclass

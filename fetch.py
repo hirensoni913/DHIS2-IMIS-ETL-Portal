@@ -7,6 +7,7 @@ import os
 from datetime import datetime
 
 import requests
+from requests import RequestException
 
 from utils import save_json
 
@@ -20,19 +21,29 @@ charts = {
 
 
 def run():
-    # get all charts into json files
-    for name, query in charts.items():
-        print(f"Downloading data: {name}")
-        data = requests.get(f"{BASE_URL}{query}").json()
-        file_path = os.path.join('data', f"{name}.json")
-        save_json(filepath=file_path, data=data)
-        print(f"Saved file at {file_path}")
 
-    # print some stats and info to info.json file
     info = {
         'lastUpdated': str(datetime.now()),
         'charts': list(charts.keys())
     }
+
+    # get all charts into json files
+    for name, query in charts.items():
+        print(f"Downloading data: {name}")
+        try:
+            data = requests.get(
+                f"{BASE_URL}{query}",
+                headers={'user-agent': 'imis-portal-bot'}
+            ).json()
+        except RequestException as e:
+            print(e)
+            info['error'] = str(e)
+        else:
+            file_path = os.path.join('data', f"{name}.json")
+            save_json(filepath=file_path, data=data)
+            print(f"Saved file at {file_path}")
+
+    # print some stats and info to info.json file
     file_path = os.path.join('data', "info.json")
     save_json(filepath=file_path, data=info)
     print(info)

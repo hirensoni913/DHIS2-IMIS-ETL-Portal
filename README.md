@@ -7,5 +7,29 @@ Installation
 
 ```
 git clone <this-repo>
+cd <this-repo>
+```
+
+then set up permissions
 
 ```
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
+```
+
+build the image and run it
+
+```
+docker image build -t flask_docker . 
+docker run -it -p 80:5000 -d flask_docker
+```
+
+watch logs
+
+```
+docker logs <containerhash> -f
+```
+
+then you should see the website running at http://<yourIP>:80
