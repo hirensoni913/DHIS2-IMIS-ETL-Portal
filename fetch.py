@@ -11,7 +11,6 @@ from requests import RequestException
 
 from utils import save_json
 
-BASE_URL = 'https://dhis-imis.swisstph-mis.ch'
 
 # Add more charts here
 # Make sure the query is URL decoded
@@ -36,6 +35,7 @@ def run():
                 headers={'user-agent': 'imis-portal-bot'}
             ).json()
         except RequestException as e:
+            # in case of an error getting data, put this info also in the info page
             print(e)
             info['error'] = str(e)
         else:

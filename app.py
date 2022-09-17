@@ -17,6 +17,7 @@ scheduler = BackgroundScheduler(daemon=True)
 scheduler.add_job(fetch_dhis2_data, 'interval', minutes=5, next_run_time=datetime.now())
 scheduler.start()
 
+
 @dataclass
 class Row:
     category: str
