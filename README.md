@@ -1,6 +1,6 @@
 # DHIS2-IMIS-ETL-Portal
 
-![screenshot](screenshot.png)
+![screenshot](docs/screenshot.png)
 
 ## Installation
 
@@ -24,8 +24,8 @@ docker run hello-world
 build the image and run it
 
 ```
-docker image build -t flask_docker . 
-docker run -it -p 80:5000 -d flask_docker
+docker image build -t imis_portal . 
+docker run -it -p 80:5000 -d imis_portal
 ```
 
 watch logs
@@ -35,3 +35,7 @@ docker logs <containerhash> -f
 ```
 
 then you should see the website running at `http://YOUR.IP.ADDRESS:80` (or at `http://yourwebsite.com`)
+
+## Architecture
+
+![screenshot](docs/architecture.png)
