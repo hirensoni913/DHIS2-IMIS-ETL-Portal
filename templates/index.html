@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+        <h1 class="title">
+            Premium collected
+        </h1>
+        <p class="subtitle">
+            by Pay Type, last 12 months
+        </p>
+        <span class="tag">updated regularly</span>
+        <div id="chart-container"></div>
+        <script language="JavaScript">
+            Highcharts.chart('chart-container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Tanzania Premium Collected'
+            },
+            subtitle: {
+                text: 'Source: IMIS'
+            },
+            xAxis: {
+                categories: {{ periods | safe }},
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'TZS'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f} TZS</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Bank',
+                data: {{ premium_collected.bank | safe }}
+            }, {
+                name: 'Cash',
+                data: {{ premium_collected.cash | safe }}
+            }, {
+                name: 'Mobile',
+                data: {{ premium_collected.mobile | safe }}
+            }]
+        });
+
+        </script>
+{% endblock %}
