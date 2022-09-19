@@ -4,15 +4,17 @@
 
 ## Installation
 
-* Install on a small VM running Ubuntu 20.04
+* Install on a VM running Ubuntu 20.04 (512MB RAM, 1CPU, 10GB is fine)
+* Make sure only Web Ports are open (SSH, HTTP, HTTPS)
 * On VM, install [Docker](https://docs.docker.com/engine/install/ubuntu/)
 
 ```
+ssh <YOUR.IP.ADDRESS>
 git clone <this-repo>
 cd <this-repo>
 ```
 
-then set up permissions
+then set up permissions and test with hello-world
 
 ```
 sudo groupadd docker
@@ -25,8 +27,10 @@ build the image and run it
 
 ```
 docker image build -t imis_portal . 
-docker run -it -p 80:5000 -d imis_portal
+docker run -it -p 80:80 -d imis_portal --env DHIS2BASEURL=https://dhis2-instance.org
 ```
+
+`--env DHIS2BASEURL=` is for defining the DHIS2 instance to pull data.
 
 watch logs
 
@@ -34,8 +38,35 @@ watch logs
 docker logs <containerhash> -f
 ```
 
-then you should see the website running at `http://YOUR.IP.ADDRESS:80` (or at `http://yourwebsite.com`)
+... then you should see the website running at `http://YOUR.IP.ADDRESS` (or at `http://yourwebsite.com`)
+
+## Development
+
+Requirements: Docker, Python
+
+Create .env file
+
+```
+DHIS2BASEURL=
+```
+
+Install and run in dev mode
+
+```
+python3 -m virtualenv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python main.py
+```
+
+To download data:
+
+```
+python background.py
+```
 
 ## Architecture
+
+To configure Nginx, see [docs](docs/nginx_configuration.md).
 
 ![screenshot](docs/architecture.png)

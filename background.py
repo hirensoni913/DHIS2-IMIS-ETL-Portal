@@ -9,8 +9,7 @@ from datetime import datetime
 import requests
 from requests import RequestException
 
-from utils import save_json
-
+from utils import save_json, get_dhis2_base_url
 
 # Add more charts here
 # Make sure the query is URL decoded
@@ -19,19 +18,20 @@ charts = {
 }
 
 
-def run():
-
+def download_data():
     info = {
         'lastUpdated': str(datetime.now()),
         'charts': list(charts.keys())
     }
 
+    base_url = get_dhis2_base_url()
+    print(f"Connecting to {base_url}")
     # get all charts into json files
     for name, query in charts.items():
         print(f"Downloading data: {name}")
         try:
             data = requests.get(
-                f"{BASE_URL}{query}",
+                f"{base_url}{query}",
                 headers={'user-agent': 'imis-portal-bot'}
             ).json()
         except RequestException as e:
@@ -50,4 +50,4 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    download_data()

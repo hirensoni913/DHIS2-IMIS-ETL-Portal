@@ -1,5 +1,4 @@
-# start by pulling the python image
-FROM python:3.10-alpine
+FROM tiangolo/uwsgi-nginx-flask:python3.10
 
 # copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
@@ -16,4 +15,4 @@ COPY . /app
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
-CMD ["app.py" ]
+CMD ["main.py" ]

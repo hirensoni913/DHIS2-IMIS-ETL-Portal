@@ -1,3 +1,7 @@
+"""
+Module to run the Flask server and start the background fetch
+"""
+
 import os
 from datetime import datetime
 from operator import attrgetter
@@ -9,12 +13,12 @@ from markupsafe import escape
 from apscheduler.schedulers.background import BackgroundScheduler
 
 from utils import load_json
-from fetch import run as fetch_dhis2_data
+from background import download_data
 
 app = Flask(__name__)
 
 scheduler = BackgroundScheduler(daemon=True)
-scheduler.add_job(fetch_dhis2_data, 'interval', minutes=5, next_run_time=datetime.now())
+scheduler.add_job(download_data, 'interval', minutes=5, next_run_time=datetime.now())
 scheduler.start()
 
 
@@ -70,5 +74,8 @@ def main():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, host='0.0.0.0', port=port, passthrough_errors=True)
+    # debug server
+    # app.run(debug=True, host='0.0.0.0', port=80, passthrough_errors=True)
+
+    # prod server
+    app.run(host='0.0.0.0', port=80)
