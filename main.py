@@ -12,7 +12,7 @@ from flask import render_template
 from markupsafe import escape
 from apscheduler.schedulers.background import BackgroundScheduler
 
-from utils import load_json
+from utils import load_data
 from background import download_data
 
 app = Flask(__name__)
@@ -39,14 +39,14 @@ class PremiumCollected:
 
 @app.route("/info")
 def info():
-    data = load_json(os.path.join('data', 'info.json'))
+    data = load_data(os.path.join('data', 'info.json'))
     return render_template('info.html', info=data)
 
 
 @app.route("/")
 def main():
-    # loading data
-    data = load_json(os.path.join('data', 'premium_collected.json'))
+    # loading cached data
+    data = load_data(os.path.join('data', 'premium_collected.json'))
 
     # get the periods, e.g. 202011
     periods = data['metaData']['dimensions']['pe']

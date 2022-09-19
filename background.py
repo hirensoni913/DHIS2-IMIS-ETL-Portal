@@ -36,6 +36,7 @@ def download_data():
             ).json()
         except RequestException as e:
             # in case of an error getting data, put this info also in the info page
+            # but not fail
             print(e)
             info['error'] = str(e)
         else:
