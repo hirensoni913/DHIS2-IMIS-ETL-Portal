@@ -15,12 +15,12 @@ For **one** chart.
 
 the analytics API call from one chart in DHIS2. Make sure it is URL decoded, e.g. with [an online tool](https://www.urldecoder.org/).
 
-### `Authorization` header
+### `Authorization` header
 
 The `Authorization` header can be created in the Browser console, paste the following:
 
 ```javascript
-Basic " + btoa('username:secretPassword')
+"Basic " + btoa('username:secretPassword')
 ```
 use a restricted user.
 
