@@ -43,7 +43,7 @@ docker image build -t imis_portal .
 docker run -it -p 80:80 -d imis_portal
 ```
 
-`--env DHIS2BASEURL=` is for defining the DHIS2 instance to pull data.
+`--e DHIS2BASEURL=` is for defining the DHIS2 instance to pull data.
 
 watch logs
 
