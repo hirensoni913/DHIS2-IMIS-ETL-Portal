@@ -1,6 +1,6 @@
 # DHIS2-IMIS-ETL-Portal
 
-> IMIS public data portal using Python, Flask, Jinja templates, Docker, and Highcharts.
+> IMIS public data portal using Python, Flask, Jinja templates, Bulma CSS, Docker, and Highcharts.
 
 ![screenshot](docs/screenshot.png)
 
@@ -32,6 +32,7 @@ DHIS2BASEURL=
 DHIS2USERNAME=
 DHIS2PASSWORD=
 ```
+and `chmod 0600 .env` to restrict access
 
 > **Warning**
 > Keep the `.env` file in a secure location
@@ -43,9 +44,9 @@ docker image build -t imis_portal .
 docker run -it -p 80:80 -d imis_portal
 ```
 
-`--e DHIS2BASEURL=` is for defining the DHIS2 instance to pull data.
+This will automatically read the `.env` file, start the container, and returns a container hash, e.g. `1efc3c3523dc12...`.
 
-watch logs
+To watch logs:
 
 ```
 docker logs <containerhash> -f
@@ -55,7 +56,7 @@ docker logs <containerhash> -f
 
 ## Development
 
-Requirements: Docker, Python
+Requirements: Docker, Python 3
 
 Create .env file
 
@@ -65,7 +66,7 @@ DHIS2USERNAME=
 DHIS2PASSWORD=
 ```
 
-Install and run in dev mode
+Install and run:
 
 ```
 python3 -m virtualenv .venv
@@ -80,12 +81,12 @@ To download data:
 python background.py
 ```
 
-### More charts
+### Adding more charts
 
 1. Create a new chart in DHIS2
 2. Make sure the user `DHIS2USERNAME` has access to the chart
 3. Identify the /api/analytics DHIS2 API request used to fetch data for that chart
 4. Add it to `charts` in `background.py`
 5. Find an equivalent visualization at [highcharts.com](https://www.highcharts.com/demo)
-6. Add it to the `static/templates`, e.g. in `index.html`
-7. Make it dynamic by parsing the data downloaded in `background.py` and pass it to the template
+6. Add it to the `templates`, e.g. in `index.html` and possibly custom CSS into the `static` folder
+7. Make it dynamic by parsing the data downloaded via `background.py` into the `data` folder and pass it to the template.
