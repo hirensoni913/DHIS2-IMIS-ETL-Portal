@@ -43,14 +43,22 @@ def save_json(filepath: str, data: dict) -> None:
         return json.dump(data, f, indent=2)
 
 
-def get_dhis2_base_url():
-    """Load DHIS2 base URL from environment"""
+def get_dhis2_credentials():
+    """Load DHIS2 credentials from environment"""
     load_dotenv()
+
+    username = os.getenv('DHIS2USERNAME')
+    password = os.getenv('DHIS2PASSWORD')
     base_url = os.getenv('DHIS2BASEURL')
+
+    if not username:
+        raise ValueError("Environment variable not found: 'DHIS2USERNAME'")
+    if not password:
+        raise ValueError("Environment variable not found: 'DHIS2PASSWORD'")
     if not base_url:
         raise ValueError("DHIS2BASEURL environment variable not set")
     if not base_url.startswith('http'):
         raise ValueError("DHIS2BASEURL invalid - http:// or https:// not found")
     if base_url.endswith("/"):
         raise ValueError("DHIS2BASEURL invalid - no trailing slash")
-    return base_url
+    return base_url, username, password

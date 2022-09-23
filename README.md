@@ -1,5 +1,7 @@
 # DHIS2-IMIS-ETL-Portal
 
+> IMIS public data portal using Python, Flask, Jinja templates, Docker, and Highcharts.
+
 ![screenshot](docs/screenshot.png)
 
 ## Installation
@@ -23,11 +25,22 @@ newgrp docker
 docker run hello-world
 ```
 
+then create and fill out a .env file
+
+```
+DHIS2BASEURL=
+DHIS2USERNAME=
+DHIS2PASSWORD=
+```
+
+> **Warning**
+> Keep the `.env` file in a secure location
+
 build the image and run it
 
 ```
 docker image build -t imis_portal . 
-docker run -it -p 80:80 -d -e DHIS2BASEURL=https://dhis2.instance.org imis_portal
+docker run -it -p 80:80 -d imis_portal
 ```
 
 `--env DHIS2BASEURL=` is for defining the DHIS2 instance to pull data.
@@ -48,6 +61,8 @@ Create .env file
 
 ```
 DHIS2BASEURL=
+DHIS2USERNAME=
+DHIS2PASSWORD=
 ```
 
 Install and run in dev mode
@@ -65,8 +80,12 @@ To download data:
 python background.py
 ```
 
-## Architecture
+### More charts
 
-To configure Nginx, see [docs](docs/nginx_configuration.md).
-
-![screenshot](docs/architecture.png)
+1. Create a new chart in DHIS2
+2. Make sure the user `DHIS2USERNAME` has access to the chart
+3. Identify the /api/analytics DHIS2 API request used to fetch data for that chart
+4. Add it to `charts` in `background.py`
+5. Find an equivalent visualization at [highcharts.com](https://www.highcharts.com/demo)
+6. Add it to the `static/templates`, e.g. in `index.html`
+7. Make it dynamic by parsing the data downloaded in `background.py` and pass it to the template
